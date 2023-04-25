@@ -1,87 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import {findAllByDisplayValue} from "@testing-library/react";
+import Accordion from "./COMPONENTS/Accordion/Accordion";
+import {Rating} from "./COMPONENTS/Rating/Rating";
 
 function App() {
     return (
         <div>
-            <AppTitle/>
-            <Rating/>
-            <Accordion/>
-            <Rating/>
+            <PageTitle title={"This is App component"}/>
+            <PageTitle title={"My Friends"}/>
+            <Accordion title={"MeNu"}/>
+            <Accordion />
+            <Rating value={0}/>
+            <Rating value={1}/>
+            <Rating value={2}/>
+            <Rating value={3}/>
+            <Rating value={4}/>
+            <Rating value={5}/>
         </div>
     );
 }
 
-function Rating() {
-    return (
-        <>
-           <Star/>
-           <Star/>
-           <Star/>
-           <Star/>
-           <Star/>
-        </>
-    );
-}
 
-function  Accordion() {
-    return <div>
-        <AccordionTitle/>
-        <AccordionBody/>
-       {/* <h3>Menu</h3>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-        </ul>*/}
-    </div>
-}
-
-function AccordionTitle() {
+function PageTitle(props: any) {
     return (
-        <div>
-            <h3>Menu</h3>
-        </div>
-    )
-}
-function AccordionBody() {
-    return (
-        <div>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
-        </div>
-    )
-}
-function Star(){
-    return (
-        <div>star</div>
-    )
-
-}
-function AppTitle() {
-    return (
-        <>This is App component</>
+        <h1>{props.title}</h1>
     )
 
 
-
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 export default App;
