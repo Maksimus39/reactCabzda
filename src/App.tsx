@@ -8,8 +8,8 @@ function App() {
         <div>
             <PageTitle title={"This is App component"}/>
             <PageTitle title={"My Friends"}/>
-            <Accordion titleValue={"MeNu"}/>
-            <Accordion titleValue={"users"}/>
+            <Accordion titleValue={"MeNu"} collapsed={true}/>
+            <Accordion titleValue={"users"} collapsed={false}/>
             <Rating value={0}/>
             <Rating value={1}/>
             <Rating value={2}/>
@@ -19,7 +19,8 @@ function App() {
         </div>
     );
 }
-type PageTitlePropsType ={
+
+type PageTitlePropsType = {
     title: string
 }
 
