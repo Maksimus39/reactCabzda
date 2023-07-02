@@ -10,6 +10,11 @@ type AccordionPropsType = {
 
     let [collapsed, setCollapsed] = useState(true)
 
+     const ToggleCollapsed = () => {
+         setCollapsed(!collapsed)
+
+     }
+
      const onToggle={
          width: '90px',
          height: '20px',
@@ -30,8 +35,8 @@ type AccordionPropsType = {
 
     return <div>
         <AccordionTitle title={props.titleValue}/>
-        <button style={onToggle} onClick={()=>setCollapsed(false)}>OnToggle</button>
-        <button  style={offToggle} onClick={()=>setCollapsed(true)}>OffToggle</button>
+        <button style={collapsed? onToggle : offToggle} onClick={ToggleCollapsed}>OnToggle</button>
+
         {!collapsed  && <AccordionBody/>}
     </div>
 }
@@ -58,3 +63,5 @@ function AccordionBody(props: any) {
 }
 
 export default UncontrolledAccordion
+
+
